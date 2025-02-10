@@ -1,0 +1,38 @@
+@startuml
+left to right direction
+:User: as u
+:Secretaria: as s
+:Aluno: as a
+:Professor: as p
+rectangle SistemaUniversidade {
+
+
+u <|-- s
+u <|-- a
+u <|-- p
+
+u -up-> (u1)
+"Validar login" as (u1)
+
+usecase "Gerar currículo" as s1
+usecase "Gerenciar professores" as s2
+usecase "Gerenciar alunos" as s3
+
+s --> s1
+s --> s2
+s --> s3
+
+usecase "Matricular em disciplina" as a1
+usecase "Cancelar matrícula" as a2
+usecase "Notificar cobrança" as a3
+
+a --> a1
+a1 .> a3 : include
+a --> a2 
+
+
+usecase "Verificar alunos matriculados" as p1
+
+p --> p1
+}
+@enduml
