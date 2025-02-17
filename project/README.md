@@ -2,7 +2,7 @@
 
 ### 1. Gerenciamento de Currículo
 **Como** secretário da universidade,  
-**Quero** cadastrar e atualizar o currículo de cada semestre,  
+**Quero** gerar o currículo de cada semestre,  
 **Para que** os alunos possam se matricular nas disciplinas disponíveis.
 
 ### 2. Gerenciamento de Disciplinas
@@ -12,8 +12,8 @@
 
 ### 3. Gerenciamento de Professores
 **Como** secretário da universidade,  
-**Quero** associar professores às disciplinas,  
-**Para que** cada disciplina tenha um docente responsável.
+**Quero** cadastrar, editar e remover professores,  
+**Para que** os professores possam ser associados a disciplinas.
 
 ### 4. Gerenciamento de Alunos
 **Como** secretário da universidade,  
