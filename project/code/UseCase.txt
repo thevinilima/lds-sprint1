@@ -17,12 +17,21 @@ u -up-> (u1)
 usecase "Gerar currículo" as s1
 usecase "Gerenciar professores" as s2
 usecase "Gerenciar alunos" as s3
+usecase "Gerenciar disciplinas" as s4
 
 s --> s1
 s --> s2
 s --> s3
+s --> s4
 
-usecase "Matricular em disciplina" as a1
+note right of s2
+  Gerenciar representa 
+  operações de criação, 
+  leitura, edição e remoção
+end note
+
+usecase a1 as "Matricular em disciplina 
+obrigatória e optativa"
 usecase "Cancelar matrícula" as a2
 usecase "Notificar cobrança" as a3
 
