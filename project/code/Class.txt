@@ -1,0 +1,49 @@
+@startuml
+abstract class User
+User <|-- Professor
+User <|-- Aluno
+User <|-- Secretaria
+
+User : String id
+User : String username
+User : String password
+User : +void login()
+User : +void logout()
+
+Professor : List<Disciplina> disciplinas
+Professor : Aluno[] getAlunosByDisciplina(String disciplinaId)
+
+Aluno : Set<Disciplina> disciplinas
+Aluno : +void matricular(String disciplinaId)
+Aluno : +void cancelar(String disciplinaId)
+Aluno : +double getValorTotalSemestre()
+
+Secretaria : Curriculo gerarCurriculo()
+
+Curriculo : List<Curso> cursos
+Curriculo : List<Professor> professores
+Curriculo : List<Aluno> alunos
+Curriculo : addDisciplina(Disciplina disciplina)
+Curriculo : addCurso(Curso curso)
+Curriculo : delDisciplina(Disciplina disciplina)
+Curriculo : delCurso(Curso curso)
+
+Curso : String id
+Curso : String nome
+Curso : Integer creditos
+Curso : List<Disciplina> disciplinas
+Curso : +void addDisciplina(Disciplina disciplina)
+Curso : +void finalizarPeriodoMatricula()
+
+Disciplina : String id
+Disciplina : String nome
+Disciplina : Integer maxAlunos
+Disciplina : Boolean isOptativa 
+Disciplina : Professor professor
+Disciplina : Set<Aluno> alunos
+Disciplina : Double valor
+Disciplina : +boolean isAtiva()
+Disciplina : +void associarProfessor(Professor professor)
+
+
+@enduml
