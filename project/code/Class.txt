@@ -21,27 +21,22 @@ Aluno : +double getValorTotalSemestre()
 Secretaria : +Curriculo gerarCurriculo()
 
 Curriculo : List<Curso> cursos
-Curriculo : List<Professor> professores
-Curriculo : List<Aluno> alunos
+Curriculo : Boolean podeMatricular
 Curriculo : +addCurso(Curso curso)
 Curriculo : +delCurso(Curso curso)
-Curriculo : +addProfessor(Professor professor)
-Curriculo : +delProfessor(Professor professor)
-Curriculo : +addAluno(Aluno aluno)
-Curriculo : +delAluno(Aluno aluno)
-
+Curriculo : +void finalizarPeriodoMatricula()
+Curriculo : +boolean podeMatricular()
 
 Curso : String id
 Curso : String nome
 Curso : Integer creditos
 Curso : List<Disciplina> disciplinas
 Curso : +void addDisciplina(Disciplina disciplina)
-Curso : +void finalizarPeriodoMatricula()
 
 Disciplina : String id
 Disciplina : String nome
 Disciplina : Integer maxAlunos
-Disciplina : Boolean isOptativa 
+Disciplina : Boolean isOptativa
 Disciplina : Professor professor
 Disciplina : Set<Aluno> alunos
 Disciplina : Double valor
