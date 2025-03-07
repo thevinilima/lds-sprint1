@@ -1,13 +1,33 @@
 import java.util.*;
 public class Aluno extends User {
-    private Set<Disciplina> disciplinas = new HashSet<>();
+    private static final int MAX_DISCIPLINAS_OBRIGATORIAS = 4;
+    private static final int MAX_DISCIPLINAS_OPTATIVAS = 2;
 
-    public void matricular(String disciplinaId) {
-        System.out.println("Matriculando aluno na disciplina: " + disciplinaId);
+    private Set<Disciplina> disciplinas;
+
+    public Aluno(String id, String nome, String password) {
+        super(id, nome, password);
+        disciplinas = new HashSet<>();
+    }
+
+    public void matricular(Disciplina disciplina) {
+        if (disciplina.isOptativa() && !podeMatricularOptativa()) {
+            System.out.println("Aluno já atingiu o limite de disciplinas optativas.");
+            return;
+        }
+        if (!disciplina.isOptativa() && !podeMatricularObrigatoria()) {
+            System.out.println("Aluno já atingiu o limite de disciplinas obrigatórias.");
+            return;
+        }
+        disciplinas.add(disciplina);
     }
 
     public void cancelar(String disciplinaId) {
-        System.out.println("Cancelando disciplina: " + disciplinaId);
+        if (disciplinas.removeIf(d -> d.getId().equals(disciplinaId))) {
+            System.out.println("Disciplina removida com sucesso.");
+        } else {
+            System.out.println("Disciplina não encontrada.");
+        }
     }
 
     public double getValorTotalSemestre() {
@@ -16,5 +36,13 @@ public class Aluno extends User {
             total += d.getValor();
         }
         return total;
+    }
+
+    private boolean podeMatricularObrigatoria() {
+        return disciplinas.stream().filter(d -> !d.isOptativa()).count() < MAX_DISCIPLINAS_OBRIGATORIAS;
+    }
+
+    private boolean podeMatricularOptativa() {
+        return disciplinas.stream().filter(d -> d.isOptativa()).count() < MAX_DISCIPLINAS_OPTATIVAS;
     }
 }

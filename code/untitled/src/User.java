@@ -4,6 +4,12 @@ public class User {
     protected String username;
     protected String password;
 
+    public User(String id, String username, String password) {
+        this.id = id;
+        this.username = username;
+        this.password = password;
+    }
+
     public void login() {
         System.out.println("Usuário " + username + " logado.");
     }
