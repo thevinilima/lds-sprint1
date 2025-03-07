@@ -11,22 +11,25 @@ User : +void login()
 User : +void logout()
 
 Professor : List<Disciplina> disciplinas
-Professor : Aluno[] getAlunosByDisciplina(String disciplinaId)
+Professor : +Aluno[] getAlunosByDisciplina(String disciplinaId)
 
 Aluno : Set<Disciplina> disciplinas
 Aluno : +void matricular(String disciplinaId)
 Aluno : +void cancelar(String disciplinaId)
 Aluno : +double getValorTotalSemestre()
 
-Secretaria : Curriculo gerarCurriculo()
+Secretaria : +Curriculo gerarCurriculo()
 
 Curriculo : List<Curso> cursos
 Curriculo : List<Professor> professores
 Curriculo : List<Aluno> alunos
-Curriculo : addDisciplina(Disciplina disciplina)
-Curriculo : addCurso(Curso curso)
-Curriculo : delDisciplina(Disciplina disciplina)
-Curriculo : delCurso(Curso curso)
+Curriculo : +addCurso(Curso curso)
+Curriculo : +delCurso(Curso curso)
+Curriculo : +addProfessor(Professor professor)
+Curriculo : +delProfessor(Professor professor)
+Curriculo : +addAluno(Aluno aluno)
+Curriculo : +delAluno(Aluno aluno)
+
 
 Curso : String id
 Curso : String nome
