@@ -11,13 +11,18 @@ User : +void login()
 User : +void logout()
 
 Professor : List<Disciplina> disciplinas
+<<<<<<< HEAD
 Professor : Aluno[] getAlunosByDisciplina(String disciplinaId)
+=======
+Professor : +Aluno[] getAlunosByDisciplina(String disciplinaId)
+>>>>>>> c0d198dfff5541c980f7cd56c3cf806f44c3bb81
 
 Aluno : Set<Disciplina> disciplinas
 Aluno : +void matricular(String disciplinaId)
 Aluno : +void cancelar(String disciplinaId)
 Aluno : +double getValorTotalSemestre()
 
+<<<<<<< HEAD
 Secretaria : Curriculo gerarCurriculo()
 
 Curriculo : List<Curso> cursos
@@ -27,18 +32,35 @@ Curriculo : addDisciplina(Disciplina disciplina)
 Curriculo : addCurso(Curso curso)
 Curriculo : delDisciplina(Disciplina disciplina)
 Curriculo : delCurso(Curso curso)
+=======
+Secretaria : +Curriculo gerarCurriculo()
+
+Curriculo : List<Curso> cursos
+Curriculo : Boolean podeMatricular
+Curriculo : +addCurso(Curso curso)
+Curriculo : +delCurso(Curso curso)
+Curriculo : +void finalizarPeriodoMatricula()
+Curriculo : +boolean podeMatricular()
+>>>>>>> c0d198dfff5541c980f7cd56c3cf806f44c3bb81
 
 Curso : String id
 Curso : String nome
 Curso : Integer creditos
 Curso : List<Disciplina> disciplinas
 Curso : +void addDisciplina(Disciplina disciplina)
+<<<<<<< HEAD
 Curso : +void finalizarPeriodoMatricula()
+=======
+>>>>>>> c0d198dfff5541c980f7cd56c3cf806f44c3bb81
 
 Disciplina : String id
 Disciplina : String nome
 Disciplina : Integer maxAlunos
+<<<<<<< HEAD
 Disciplina : Boolean isOptativa 
+=======
+Disciplina : Boolean isOptativa
+>>>>>>> c0d198dfff5541c980f7cd56c3cf806f44c3bb81
 Disciplina : Professor professor
 Disciplina : Set<Aluno> alunos
 Disciplina : Double valor
@@ -46,4 +68,8 @@ Disciplina : +boolean isAtiva()
 Disciplina : +void associarProfessor(Professor professor)
 
 
+<<<<<<< HEAD
 @enduml
+=======
+@enduml
+>>>>>>> c0d198dfff5541c980f7cd56c3cf806f44c3bb81
