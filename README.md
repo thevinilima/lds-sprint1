@@ -1,15 +1,15 @@
 # Nome do projeto
-Escreva um ou dois parágrafo resumindo o objetivo do seu projeto.
+Este projeto é um sistema de matrículas fictício desenvolvido como parte de um trabalho acadêmico para a disciplina de Laboratório de Desenvolvimento de Software. Ele permite gerenciar matrículas de alunos em disciplinas, associar professores às disciplinas e gerar currículos semestrais, com funcionalidades para a secretaria, professores e alunos, incluindo login, matrícula, cancelamento e finalização de períodos.
+
 
 ## Integrantes
-* Nome completo do aluno 1
-* Nome completo do aluno 2
-* Nome completo do aluno 3
-* Nome completo do aluno 4
+* André Almeida Silva
+* Vítor de Figueiredo
+* Vinicius Lima
 
 ## Orientadores
-* Nome completo do professor 1
-* Nome completo do professor 2
+* Cleiton Tavares
 
 ## Instruções de utilização
-Assim que a primeira versão do sistema estiver disponível, deverá complementar com as instruções de utilização. Descreva como instalar eventuais dependências e como executar a aplicação.
+
+Clone o repositório e execute a classe Main.java em um ambiente Java. O sistema oferece um menu interativo no console: cadastre usuários (alunos, professores ou secretaria), faça login e acesse as funcionalidades específicas de cada tipo de usuário. Os dados de usuários e disciplinas são salvos em src/usuarios.csv para persistência entre execuções. Certifique-se de ter o Java instalado e configurado corretamente.
