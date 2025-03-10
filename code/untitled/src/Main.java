@@ -221,13 +221,13 @@ public class Main {
         double valor = scanner.nextDouble();
         System.out.print("É optativa? (1-Sim, 0-Não): ");
         int optativa = scanner.nextInt();
-        scanner.nextLine(); // Consumir a nova linha
+        scanner.nextLine();
 
         Disciplina disciplina = new Disciplina(id, nome, valor, optativa == 1);
         disciplinas.add(disciplina);
         curriculo.addDisciplina(disciplina);
         System.out.println("Disciplina cadastrada!");
-        salvarUsuarios(); // Salvar imediatamente após cadastrar
+        salvarUsuarios();
     }
 
     private static Disciplina buscarDisciplinaPorId(String id) {
@@ -251,7 +251,6 @@ public class Main {
                 }
 
                 if (!lendoDisciplinas) {
-                    // Carregar usuários
                     String[] dados = linha.split(",");
                     if (dados.length == 3) {
                         String tipo = dados[0];
@@ -269,7 +268,6 @@ public class Main {
                         users.add(user);
                     }
                 } else {
-                    // Carregar disciplinas
                     if (!linha.trim().isEmpty()) {
                         String[] dados = linha.split(",");
                         if (dados.length == 4) {
@@ -285,11 +283,10 @@ public class Main {
             }
         } catch (IOException e) {
             System.out.println("Erro ao carregar usuários ou disciplinas: " + e.getMessage());
-            // Criar o arquivo se não existir
             File file = new File("code/untitled/src/usuarios.csv");
-            file.getParentFile().mkdirs(); 
+            file.getParentFile().mkdirs();
             try {
-                file.createNewFile(); 
+                file.createNewFile();
                 System.out.println("Arquivo src/usuarios.csv criado.");
             } catch (IOException ex) {
                 System.out.println("Erro ao criar arquivo: " + ex.getMessage());
@@ -299,15 +296,13 @@ public class Main {
 
     private static void salvarUsuarios() {
         try (BufferedWriter bw = new BufferedWriter(new FileWriter("code/untitled/src/usuarios.csv"))) {
-            // Salvar usuários
             for (User user : users) {
                 String tipo = user instanceof Aluno ? "Aluno" : user instanceof Professor ? "Professor" : "Secretaria";
                 bw.write(tipo + "," + user.getUsername() + "," + user.getPassword());
                 bw.newLine();
             }
-            bw.write("---DISCIPLINAS---"); // Separador
+            bw.write("---DISCIPLINAS---");
             bw.newLine();
-            // Salvar disciplinas
             for (Disciplina disciplina : disciplinas) {
                 bw.write(disciplina.toString());
                 bw.newLine();
