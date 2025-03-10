@@ -1,4 +1,4 @@
-# Nome do projeto
+# Sistema de Matrícula
 Este projeto é um sistema de matrículas fictício desenvolvido como parte de um trabalho acadêmico para a disciplina de Laboratório de Desenvolvimento de Software. Ele permite gerenciar matrículas de alunos em disciplinas, associar professores às disciplinas e gerar currículos semestrais, com funcionalidades para a secretaria, professores e alunos, incluindo login, matrícula, cancelamento e finalização de períodos.
 
 
