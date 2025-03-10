@@ -1,7 +1,13 @@
-import java.util.*;
-public class Secretaria {
+public class Secretaria extends User {
+
+    public Secretaria(String username, String password) {
+        super(username, password);
+    }
+
     public Curriculo gerarCurriculo() {
-        System.out.println("Gerando currículo...");
-        return new Curriculo();
+        Curriculo curriculo = new Curriculo();
+        Curso curso = new Curso("ENG001", "Engenharia", 200);
+        curriculo.addCurso(curso);
+        return curriculo;
     }
 }
