@@ -1,53 +1,5 @@
-<<<<<<< HEAD
 @startuml
-left to right direction
-:User: as u
-:Secretaria: as s
-:Aluno: as a
-:Professor: as p
-rectangle SistemaUniversidade {
 
-
-u <|-- s
-u <|-- a
-u <|-- p
-
-u -up-> (u1)
-"Validar login" as (u1)
-
-usecase "Gerar currículo" as s1
-usecase "Gerenciar professores" as s2
-usecase "Gerenciar alunos" as s3
-usecase "Gerenciar disciplinas" as s4
-
-s --> s1
-s --> s2
-s --> s3
-s --> s4
-
-note right of s2
-  Gerenciar representa 
-  operações de criação, 
-  leitura, edição e remoção
-end note
-
-usecase a1 as "Matricular em disciplina 
-obrigatória e optativa"
-usecase "Cancelar matrícula" as a2
-usecase "Notificar cobrança" as a3
-
-a --> a1
-a1 .> a3 : include
-a --> a2 
-
-
-usecase "Verificar alunos matriculados" as p1
-
-p --> p1
-}
-@enduml
-=======
-@startuml
 left to right direction
 :User: as u
 :Secretaria: as s
@@ -82,20 +34,19 @@ end note
 usecase a1 as "Matricular em disciplina"
 usecase "Cancelar matrícula" as a2
 usecase "Notificar cobrança" as a3
-
-usecase "Checar quantidade obrigatórias" as a4
-usecase "Checar quantidade optativas" as a5 
+usecase "Obrigatória" as a4
+usecase "Optativa" as a5
 
 a --> a1
 a1 .> a3 : include
-a1 .> a4 : include
-a1 .> a5 : include
 a --> a2 
+a1 .> a4 : include
+a1 .> a5 : extend
 
 
 usecase "Verificar alunos matriculados" as p1
 
 p --> p1
 }
+
 @enduml
->>>>>>> c0d198dfff5541c980f7cd56c3cf806f44c3bb81
